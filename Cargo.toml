@@ -1,0 +1,20 @@
+[package]
+name = "konpeito"
+description = "A local key-value store database"
+version = "0.1.0"
+edition = "2021"
+authors = ["Cappy Ishihara <cappy@cappuchino.xyz>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chacha20poly1305 = "0.10.0"
+clap = { version = "3.2.16", features = ["derive", "env"] }
+dotenv = { version = "0.15.0", features = ["clap", "cli"] }
+encrypted-sled = "0.2.0"
+magic-crypt = "3.1.10"
+passwords = "3.1.9"
+rand = "0.8.5"
+ring = "0.16.20"
+shellexpand = "2.1.2"
+sled = { version = "0.34.7", features = ["compression"] }
