@@ -1,3 +1,5 @@
+<img align="left" style="vertical-align: middle" width="120" height="120" src=https://user-images.githubusercontent.com/4886639/183321432-b17aa134-9f7a-41ee-91d2-778b6062813f.png>
+
 # Konpeito
 
 Konpeito is a personal key-value store database that can be used to store anything.
