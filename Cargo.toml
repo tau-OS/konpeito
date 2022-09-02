@@ -8,13 +8,17 @@ authors = ["Cappy Ishihara <cappy@cappuchino.xyz>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-chacha20poly1305 = "0.10.0"
+aead = "0.5.1"
+#chacha20poly1305 = "0.10.1"
 clap = { version = "3.2.16", features = ["derive", "env"] }
 dotenv = { version = "0.15.0", features = ["clap", "cli"] }
-encrypted-sled = "0.2.0"
+ellipse = "0.2.0"
+#encrypted-sled = "0.2.0"
 magic-crypt = "3.1.10"
+osshkeys = "0.6.2"
 passwords = "3.1.9"
 rand = "0.8.5"
 ring = "0.16.20"
 shellexpand = "2.1.2"
 sled = { version = "0.34.7", features = ["compression"] }
+tabwriter = "1.2.1"

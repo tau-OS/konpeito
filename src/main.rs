@@ -2,11 +2,16 @@
 //! Konpeito is a personal key-value store writt&en in Rust, powered by sled.
 //! It is a simple, fast, and encrypted key-value store that can store any type of data.
 
-use std::{path::PathBuf, io::Read};
+use std::{
+    io::{BufReader, Read},
+    path::PathBuf,
+};
 
 use clap::Parser;
 mod key;
+use ellipse::Ellipse;
 use std::io::Write;
+use tabwriter::TabWriter;
 /// Konpeito Personal Key-value store
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -37,9 +42,9 @@ enum Command {
         key: String,
         /// The value to set.
         /// Can be a string or piped input
-        value: Option<String>
+        value: Option<String>,
     },
-    /// Lists all keys and values (WIP)
+    /// Lists all keys and values
     List,
     /// Deletes a key
     Delete {
@@ -47,7 +52,6 @@ enum Command {
         key: String,
     },
 }
-
 
 fn main() {
     //println!("Hello, world!");
@@ -87,7 +91,30 @@ fn main() {
         }
         Command::List => {
             //println!("List");
-            ks.list();
+            let list = ks.list();
+            // tabwriter
+            let mut tw = TabWriter::new(vec![]);
+            tw.write_all(b"KEY\tVALUE\n").unwrap();
+            for (k, v) in list {
+                let key = k;
+                // try converting to utf8, then truncate to 20 chars
+                let buf = BufReader::new(v.as_slice());
+                let value: String = String::from_utf8(
+                    buf.take(50)
+                        .bytes()
+                        .collect::<Result<Vec<u8>, _>>()
+                        .unwrap(),
+                )
+                .unwrap_or_else(|_| "<BINARY>".to_string());
+                let value: &str = &value.escape_default().to_string();
+                let value = value.truncate_ellipse(20);
+
+                tw.write_all(format!("{key}\t{value}\n").as_bytes())
+                    .unwrap();
+            }
+            tw.flush().unwrap();
+            let s = String::from_utf8(tw.into_inner().unwrap()).unwrap();
+            println!("{s}");
         }
         Command::Delete { key } => {
             ks.delete(&key);
@@ -95,7 +122,5 @@ fn main() {
         }
     }
 
-
     //tree.insert("a", "b").expect("failed to insert");
-
 }
