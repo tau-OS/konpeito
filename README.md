@@ -46,6 +46,13 @@ konpeito list
 
 Simply install this crate
 
+From source:
+
 ```bash
-cargo install .
+cargo install --path .
+```
+
+From crates.io:
+```bash
+cargo install konpeito
 ```
