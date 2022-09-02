@@ -23,3 +23,12 @@ ring = "0.16.20"
 shellexpand = "2.1.2"
 sled = { version = "0.34.7", features = ["compression"] }
 tabwriter = "1.2.1"
+
+
+[package.metadata.generate-rpm]
+
+
+[[package.metadata.generate-rpm.assets]]
+source = "target/release/konpeito"
+dest = "/usr/bin/konpeito"
+mode = "755"
