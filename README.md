@@ -28,25 +28,25 @@ Konpeito reads and writes values using Base64 encoding, this means that you can 
 To store items:
 
 ```bash
-konpeito set key value
+konp set key value
 ```
 
 If you want to store a file or something from stdin:
 
 ```bash
-konpeito set key < file
+konp set key < file
 ```
 
 To retrieve items:
 
 ```bash
-konpeito get key
+konp get key
 ```
 
 To delete keys:
 
 ```bash
-konpeito delete key
+konp delete key
 ```
 
 ## Installation
