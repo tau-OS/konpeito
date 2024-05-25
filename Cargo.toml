@@ -1,0 +1,25 @@
+[package]
+name = "konpeito"
+version = "0.2.0"
+edition = "2021"
+authors = ["Madomado <mado@fyralabs.com>", "Pornpipat Popum <cappy@fyralabs.com>"]
+readme = "README.md"
+categories = [
+    "authentication",
+    "command-line-utilities",
+    "encoding",
+]
+license-file = "LICENSE"
+
+
+[[bin]]
+name = "konp"
+path = "src/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+base64 = "0.22.1"
+clap = { version = "4.5.4", features = ["derive"] }
+color-eyre = "0.6.3"
+keyring = "2.3.3"
