@@ -5,7 +5,7 @@
 Konpeito is a personal key-value store CLI that can be used to store **anything** securely to/from the system's keyring.
 
 [![Crates.io](https://img.shields.io/crates/v/konpeito)](https://crates.io/crates/konpeito)
-[![License](https://img.shields.io/crates/l/konpeito)]
+![License](https://img.shields.io/crates/l/konpeito)
 
 ## How it works
 

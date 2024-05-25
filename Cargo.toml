@@ -1,6 +1,6 @@
 [package]
 name = "konpeito"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "Personal key-value store CLI" 
 authors = ["Madomado <mado@fyralabs.com>", "Pornpipat Popum <cappy@fyralabs.com>"]
@@ -11,8 +11,7 @@ categories = [
     "encoding",
 ]
 repository = "https://github.com/tau-OS/konpeito"
-license-file = "LICENSE"
-
+license = "MIT"
 
 [[bin]]
 name = "konp"
