@@ -2,6 +2,7 @@
 name = "konpeito"
 version = "0.2.0"
 edition = "2021"
+description = "Personal key-value store CLI" 
 authors = ["Madomado <mado@fyralabs.com>", "Pornpipat Popum <cappy@fyralabs.com>"]
 readme = "README.md"
 categories = [
