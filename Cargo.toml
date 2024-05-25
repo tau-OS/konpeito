@@ -10,6 +10,7 @@ categories = [
     "command-line-utilities",
     "encoding",
 ]
+repository = "https://github.com/tau-OS/konpeito"
 license-file = "LICENSE"
 
 
