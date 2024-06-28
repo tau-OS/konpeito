@@ -49,6 +49,12 @@ To delete keys:
 konp delete key
 ```
 
+To list all keys for konpeito:
+
+```bash
+konp list
+```
+
 ## Installation
 
 Simply install this crate
