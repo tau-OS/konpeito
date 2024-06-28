@@ -29,6 +29,13 @@ fn main() -> color_eyre::Result<()> {
         cli::KonpeitoCmd::Delete { key } => {
             keys::del_key(&key, &p.service)?;
         }
+        
+        cli::KonpeitoCmd::List => {
+            let keys = keys::list_keys(&p.service)?;
+            for key in keys {
+                println!("{}", key);
+            }
+        }
     }
     Ok(())
 }

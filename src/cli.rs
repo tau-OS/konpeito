@@ -19,4 +19,6 @@ pub enum KonpeitoCmd {
     Set { key: String, value: Option<String> },
     #[clap(about = "Delete a key in the keyring")]
     Delete { key: String },
+    #[clap(about = "List all keys in the keyring")]
+    List,
 }

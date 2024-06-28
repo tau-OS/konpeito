@@ -1,6 +1,6 @@
 [package]
 name = "konpeito"
-version = "0.2.1"
+version = "0.3.0"
 edition = "2021"
 description = "Personal key-value store CLI" 
 authors = ["Madomado <mado@fyralabs.com>", "Pornpipat Popum <cappy@fyralabs.com>"]
@@ -24,3 +24,4 @@ base64 = "0.22.1"
 clap = { version = "4.5.4", features = ["derive"] }
 color-eyre = "0.6.3"
 keyring = "2.3.3"
+keyring-search = { version = "1.2.1", features = ["secret-service"] }
